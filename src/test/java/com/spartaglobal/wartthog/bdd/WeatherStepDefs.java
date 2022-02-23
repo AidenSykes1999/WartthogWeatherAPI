@@ -27,4 +27,6 @@ public class WeatherStepDefs {
     @When("I set query param {string} as {string}")
     public void iSetQueryParamAs(String arg0, String arg1) {
     }
+
+
 }
