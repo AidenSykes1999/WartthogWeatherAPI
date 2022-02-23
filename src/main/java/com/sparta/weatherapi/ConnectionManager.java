@@ -15,10 +15,10 @@ import java.util.Properties;
 
 public class ConnectionManager {
 
-    public Weather getWeather(Properties props, int latitude, int longuitude) {
+    public Weather getWeather(Properties props, int latitude, int longitude) {
 
         String url = "http://api.openweathermap.org/data/2.5/weather?"
-                + "lat=" + latitude + "&lon=" + longuitude
+                + "lat=" + latitude + "&lon=" + longitude
                 + "&appid=" + props.getProperty("apikey");
 
         ObjectMapper objMap = new ObjectMapper();
@@ -42,10 +42,10 @@ public class ConnectionManager {
     }
 
 
-    public HttpResponse<String> newMethod(Properties props, int latitude, int longuitude) {
+    public String newMethod(Properties props, int latitude, int longitude) {
 
         String url = "http://api.openweathermap.org/data/2.5/weather?"
-                + "lat=" + latitude + "&lon=" + longuitude
+                + "lat=" + latitude + "&lon=" + longitude
                 + "&appid=" + props.getProperty("apikey");
         HttpRequest request = HttpRequest
                 .newBuilder()
@@ -55,7 +55,7 @@ public class ConnectionManager {
         try{
             HttpResponse<String> response =
                     httpClient.send(request,HttpResponse.BodyHandlers.ofString());
-            return response;
+            return response.body();
         }
         catch (IOException | InterruptedException e){
             e.printStackTrace();
