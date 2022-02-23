@@ -26,6 +26,10 @@ public class Main {
         Weather testWeather = injector.injectResponseToWeather(stringWeather);
         System.out.println(testWeather.toString());
 
+        String stringWeatherCity = ConnectionManager.getConnectionCity(props, "Zaragoza");
+        Weather testWeather2 = injector.injectResponseToWeather(stringWeatherCity);
+        System.out.println(testWeather2.toString());
+
     }
 
 
