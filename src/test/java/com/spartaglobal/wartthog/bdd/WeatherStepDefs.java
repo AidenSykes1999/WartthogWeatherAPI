@@ -9,6 +9,8 @@ public class WeatherStepDefs {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
+
     @When("I send {string} HTTP request")
     public void i_send_http_request(String string) {
         // Write code here that turns the phrase above into concrete actions
@@ -27,6 +29,11 @@ public class WeatherStepDefs {
     @When("I set query param {string} as {string}")
     public void iSetQueryParamAs(String arg0, String arg1) {
     }
+
+    @And("I send {int} longitude and {int} latitude")
+    public void i_send_lat_and_long(int latitude , int longitude ) {
+    }
+
 
 
 }
