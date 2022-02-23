@@ -42,11 +42,31 @@ public class ConnectionManager {
     }
 
 
-    public String newMethod(Properties props, int latitude, int longitude) {
+    public static String newMethod(Properties props, int latitude, int longitude) {
 
         String url = "http://api.openweathermap.org/data/2.5/weather?"
                 + "lat=" + latitude + "&lon=" + longitude
                 + "&appid=" + props.getProperty("apikey");
+        HttpRequest request = HttpRequest
+                .newBuilder()
+                .uri(URI.create(url))
+                .build();
+        HttpClient httpClient = HttpClient.newHttpClient();
+        try{
+            HttpResponse<String> response =
+                    httpClient.send(request,HttpResponse.BodyHandlers.ofString());
+            return response.body();
+        }
+        catch (IOException | InterruptedException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String getConnectionCity(Properties props, String city) {
+
+        String url = "http://api.openweathermap.org/data/2.5/weather?"
+                + "q=" + city + "&appid=" + props.getProperty("apikey");
         HttpRequest request = HttpRequest
                 .newBuilder()
                 .uri(URI.create(url))
