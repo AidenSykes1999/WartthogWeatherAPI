@@ -98,20 +98,20 @@ public class Weather{
 
 	@Override
 	public String toString() {
-		return "Weather{" +
-				"visibility=" + visibility +
-				", timezone=" + timezone +
-				", conditions=" + conditions +
-				", clouds=" + clouds +
-				", sys=" + sys +
-				", dt=" + dt +
-				", coord=" + coord +
-				", weather=" + weather +
-				", name='" + name + '\'' +
-				", cod=" + cod +
-				", id=" + id +
-				", base='" + base + '\'' +
-				", wind=" + wind +
+		return "Weather: " +
+				"visibility: " + visibility +
+				", timezone: " + timezone +
+				", conditions: " + conditions +
+				", clouds: " + clouds +
+				", sys: " + sys +
+				", dt: " + dt +
+				", coord: " + coord +
+				", weather: " + weather +
+				", name: '" + name + '\'' +
+				", cod: " + cod +
+				", id: " + id +
+				", base: '" + base + '\'' +
+				", wind: " + wind +
 				'}';
 	}
 }

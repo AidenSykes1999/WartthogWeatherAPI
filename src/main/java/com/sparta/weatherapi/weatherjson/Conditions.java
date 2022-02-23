@@ -62,15 +62,15 @@ public class Conditions {
 
 	@Override
 	public String toString() {
-		return "Conditions{" +
-				"temp=" + temp +
-				", tempMin=" + tempMin +
-				", grndLevel=" + grndLevel +
-				", humidity=" + humidity +
-				", pressure=" + pressure +
-				", seaLevel=" + seaLevel +
-				", feelsLike=" + feelsLike +
-				", tempMax=" + tempMax +
-				'}';
+		return "Conditions: " +
+				"temp: " + temp +
+				", tempMin: " + tempMin +
+				", grndLevel: " + grndLevel +
+				", humidity: " + humidity +
+				", pressure: " + pressure +
+				", seaLevel: " + seaLevel +
+				", feelsLike: " + feelsLike +
+				", tempMax: " + tempMax +
+				'.';
 	}
 }

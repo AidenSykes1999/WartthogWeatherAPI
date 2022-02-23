@@ -2,7 +2,7 @@ package com.sparta.weatherapi.weatherjson;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Sys{
+public class Sys {
 
 	@JsonProperty("country")
 	private String country;
@@ -12,6 +12,12 @@ public class Sys{
 
 	@JsonProperty("sunset")
 	private int sunset;
+
+	@JsonProperty("id")
+	private int id;
+
+	@JsonProperty("type")
+	private int type;
 
 	public String getCountry(){
 		return country;
@@ -25,12 +31,20 @@ public class Sys{
 		return sunset;
 	}
 
+	public int getId(){
+		return id;
+	}
+
+	public int getType(){
+		return type;
+	}
+
 	@Override
 	public String toString() {
-		return "Sys{" +
-				"country='" + country + '\'' +
-				", sunrise=" + sunrise +
-				", sunset=" + sunset +
+		return "Sys: " +
+				"country'" + country + '\'' +
+				", sunrise: " + sunrise +
+				", sunset: " + sunset +
 				'}';
 	}
 }

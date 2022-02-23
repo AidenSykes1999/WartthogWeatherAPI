@@ -13,8 +13,8 @@ public class Clouds{
 
 	@Override
 	public String toString() {
-		return "Clouds{" +
-				"all=" + all +
-				'}';
+		return "Clouds: " +
+				"all: " + all +
+				'.';
 	}
 }
