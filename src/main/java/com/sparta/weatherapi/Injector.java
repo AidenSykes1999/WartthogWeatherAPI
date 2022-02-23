@@ -12,30 +12,27 @@ import java.util.List;
 
 public class Injector {
 
-    // public static <JSONParser> Weather injectResponseToWeather(HttpResponse<String> response) {
-    //
-    //     ObjectMapper objMap = new ObjectMapper();
-    //     Weather weather = null;
-    //
-    //     JsonFactory factory = new JsonFactory();
-    //     factory.createParser(response);
-    //
-    //     try{
-    //
-    //         weather = objMap.readValue(response, Weather.class);
-    //         List<WeatherItem> weatherItems = weather.getWeather();
-    //
-    //         for( WeatherItem weatherItem : weatherItems){
-    //             System.out.println(weatherItem.toString());
-    //         }
-    //
-    //     }
-    //     catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
-    //
-    //     return weather;
-    //
-    // }
+     public Weather injectResponseToWeather(String response) {
+
+         ObjectMapper objMap = new ObjectMapper();
+         Weather weather = null;
+
+         try{
+
+             weather = objMap.readValue(response, Weather.class);
+             List<WeatherItem> weatherItems = weather.getWeather();
+
+             for( WeatherItem weatherItem : weatherItems){
+                 System.out.println(weatherItem.toString());
+             }
+
+         }
+         catch (IOException e) {
+             e.printStackTrace();
+         }
+
+         return weather;
+
+     }
 
 }

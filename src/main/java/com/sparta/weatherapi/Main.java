@@ -1,6 +1,7 @@
 package com.sparta.weatherapi;
 
 import com.sparta.weatherapi.weatherjson.Weather;
+import io.cucumber.java.sl.In;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,8 +20,10 @@ public class Main {
         }
 
         ConnectionManager connectionManager = new ConnectionManager();
+        Injector injector = new Injector();
 
-        Weather testWeather = connectionManager.getWeather(props, 35, 139);
+        String stringWeather = connectionManager.newMethod(props, 35, 139);
+        Weather testWeather = injector.injectResponseToWeather(stringWeather);
         System.out.println(testWeather.toString());
 
     }
