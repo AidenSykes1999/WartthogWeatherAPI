@@ -17,21 +17,7 @@ public class ConnectionManager {
                 + "lat=" + latitude + "&lon=" + longitude
                 + "&appid=" + props.getProperty("apikey");
 
-        HttpRequest request = createHttpRequest(url);
-
-        HttpClient httpClient = HttpClient.newHttpClient();
-        String responseString = "";
-
-        try{
-            HttpResponse<String> response =
-                    httpClient.send(request,HttpResponse.BodyHandlers.ofString());
-
-            responseString = response.body();
-            this.statusCode = response.statusCode();
-        }
-        catch (IOException | InterruptedException e){
-            e.printStackTrace();
-        }
+        String responseString = makeApiCall(url);
 
         return responseString;
     }
@@ -41,7 +27,17 @@ public class ConnectionManager {
         String url = "http://api.openweathermap.org/data/2.5/weather?"
                 + "q=" + city + "&appid=" + props.getProperty("apikey");
 
-        HttpRequest request = createHttpRequest(url);
+        String responseString = makeApiCall(url);
+
+        return responseString;
+    }
+
+    private String makeApiCall(String url) {
+
+        HttpRequest request = HttpRequest
+                .newBuilder()
+                .uri(URI.create(url))
+                .build();
 
         HttpClient httpClient = HttpClient.newHttpClient();
         String responseString = "";
@@ -59,10 +55,7 @@ public class ConnectionManager {
         }
 
         return responseString;
-    }
 
-    private HttpRequest createHttpRequest(String url) {
-        return HttpRequest.newBuilder().uri(URI.create(url)).build();
     }
 
     public int getStatusCode() {
