@@ -47,56 +47,70 @@ public class Weather{
 	@JsonProperty("wind")
 	private Wind wind;
 
-	public int getVisibility(){
+	@JsonProperty("rain")
+	private Rain rain;
+
+	@JsonProperty("snow")
+	private Snow snow;
+
+	public int getVisibility() {
 		return visibility;
 	}
 
-	public int getTimezone(){
+	public int getTimezone() {
 		return timezone;
 	}
 
-	public Conditions getMain(){
+	public Conditions getConditions() {
 		return conditions;
 	}
 
-	public Clouds getClouds(){
+	public Clouds getClouds() {
 		return clouds;
 	}
 
-	public Sys getSys(){
+	public Sys getSys() {
 		return sys;
 	}
 
-	public int getDt(){
+	public int getDt() {
 		return dt;
 	}
 
-	public Coord getCoord(){
+	public Coord getCoord() {
 		return coord;
 	}
 
-	public List<WeatherItem> getWeather(){
+	public List<WeatherItem> getWeather() {
 		return weather;
 	}
 
-	public String getName(){
+	public String getName() {
 		return name;
 	}
 
-	public int getCod(){
+	public int getCod() {
 		return cod;
 	}
 
-	public int getId(){
+	public int getId() {
 		return id;
 	}
 
-	public String getBase(){
+	public String getBase() {
 		return base;
 	}
 
-	public Wind getWind(){
+	public String getMessage() {
+		return message;
+	}
+
+	public Wind getWind() {
 		return wind;
+	}
+
+	public Rain getRain() {
+		return rain;
 	}
 
 	@Override
@@ -115,6 +129,8 @@ public class Weather{
 				", id: " + id +
 				", base: '" + base + '\'' +
 				", wind: " + wind +
+				", rain: " + rain +
+				", snow: " + snow +
 				'}';
 	}
 }
