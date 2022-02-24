@@ -11,37 +11,11 @@ public class ConnectionManager {
 
     private int statusCode;
 
-    public String latLonApiCall(Properties props, int latitude, int longitude) {
+    public final String url =  "http://api.openweathermap.org/data/2.5/weather?";
 
-        String url = "http://api.openweathermap.org/data/2.5/weather?"
-                + "lat=" + latitude + "&lon=" + longitude
-                + "&appid=" + props.getProperty("apikey");
+    public String ApiCall(String uri) {
 
-        HttpRequest request = createHttpRequest(url);
-
-        HttpClient httpClient = HttpClient.newHttpClient();
-        String responseString = "";
-
-        try{
-            HttpResponse<String> response =
-                    httpClient.send(request,HttpResponse.BodyHandlers.ofString());
-
-            responseString = response.body();
-            this.statusCode = response.statusCode();
-        }
-        catch (IOException | InterruptedException e){
-            e.printStackTrace();
-        }
-
-        return responseString;
-    }
-
-    public String cityApiCall(Properties props, String city) {
-
-        String url = "http://api.openweathermap.org/data/2.5/weather?"
-                + "q=" + city + "&appid=" + props.getProperty("apikey");
-
-        HttpRequest request = createHttpRequest(url);
+        HttpRequest request = createHttpRequest(uri);
 
         HttpClient httpClient = HttpClient.newHttpClient();
         String responseString = "";
@@ -68,4 +42,21 @@ public class ConnectionManager {
     public int getStatusCode() {
         return statusCode;
     }
+
+    public String getResponseByCity(String city, Properties props){
+        String uri = url + "q=" + city + "&appid=" + props.getProperty("apikey");
+        return ApiCall(uri);
+    }
+
+    public String getResponseByLatLon(int lat, int lon, Properties props){
+        String uri = url + "lat=" + lat + "&lon=" + lon + "&appid=" + props.getProperty("apikey");
+        return ApiCall(uri);
+    }
+
+    public String getResponseByZipCountryCode(String zipCode, String countryCode, Properties props){
+        String uri = url + "zip=" + zipCode + "," + countryCode + "&appid=" + props.getProperty("apikey");
+        return ApiCall(uri);
+    }
+
+
 }
