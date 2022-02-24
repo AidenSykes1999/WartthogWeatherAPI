@@ -1,2 +1,17 @@
-# WartthogWeatherAPI
-Sparta Global Weather API Project Team Wartthog
+# Table of Contents
+- [Management of The Project](#management-of-the-project)
+  - [Agile](#agile)
+    - [Sprint](#sprint)
+  - [User Stories](#user-stories)
+  - [Roles](#roles)
+  - [Tracking Tool - Trello](#tracking-tool-trello)
+- [How Framework Works](#how-framework-works)
+  - [How Open Weather Api Behaves](#how-open-weather-api-behaves)
+- [Connection Manager](#connection-manager)
+- [Injector](#injector)
+- [Data Transfer Object](#data-transfer-object)
+- [Manual Testing](#manual-testing)
+- [Behavior-driven Development approach](#behavior-driven-development-approach)
+- [Junit Testing](#junit-testing)
+  - [Mocking](#mocking)
+- [Advantages of The Framework](#advantages-of-this-framework)
