@@ -1,20 +1,5 @@
 Feature: Weather
 
-  Scenario: Valid City
-    Given the user with ID "ID" for the API
-    When I send "GET" HTTP request
-    When I set Header param request "Content-Type" as "application/json"
-    When I set query param "q" as "London"
-    Then status code is 200
-
-    Scenario:
-      Given the user with ID "ID" for the API
-      When I send "GET" HTTP request
-      When I set Header param request "Content-Type" as "application/json"
-      When I set query param "q" as ""
-      Then status code is 400
-
-
       #If user is entering lat and long that are valid (-90 to 90) and (-180 to 180)
 
   Scenario Outline: Valid Latitude and Longitude
@@ -56,7 +41,7 @@ Feature: Weather
 
   # If user enters a city name in a foreign language, then the API should translate the city name to its' native language
 
-  Scenario Outline: Foreign City
+  Scenario Outline: Different cities
     Given the user with ID "ID" for the API
     When I send "GET" HTTP request
     When I set Header param request "Content-Type" as "application/json"
@@ -69,6 +54,8 @@ Feature: Weather
       | Kiev   | 200    |
       | Москва | 200    |
       | 鹿児島市   | 200    |
+      |        | 400    |
+      | London | 200    |
 
 
     # If user enters a city name with a space, then the API should handle the city name without throwing an error
