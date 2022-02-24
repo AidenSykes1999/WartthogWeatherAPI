@@ -17,7 +17,7 @@ Feature: Weather
 
       #If user is entering lat and long that are valid (-90 to 90) and (-180 to 180)
 
-  Scenario Outline:
+  Scenario Outline: Valid Latitude and Longitude
     Given the user with ID "ID" for the API
     And I send <input1> longitude and <input2> latitude
     When I set Header param request "Content-Type" as "application/json"
@@ -31,7 +31,7 @@ Feature: Weather
       #If user is entering lang that is not supported by the API
 
 
-  Scenario:
+  Scenario: Valid Language
 
     Given the user with ID "ID" for the API
     When I send "GET" HTTP request
@@ -39,7 +39,7 @@ Feature: Weather
     When I set query param "lang" as "en"
     Then status code is 200
 
-  Scenario:
+  Scenario: Invalid Language
 
     Given the user with ID "ID" for the API
     When I send "GET" HTTP request
@@ -60,7 +60,7 @@ Feature: Weather
     Given the user with ID "ID" for the API
     When I send "GET" HTTP request
     When I set Header param request "Content-Type" as "application/json"
-    When I set query param "q" as <city>
+    When I set query param "q" as "<city>"
     Then status code is <result>
 
     Examples:
@@ -78,7 +78,7 @@ Feature: Weather
     Given the user with ID "ID" for the API
     When I send "GET" HTTP request
     When I set Header param request "Content-Type" as "application/json"
-    When I set query param "q" as <city>
+    When I set query param "q" as "<city>"
     Then status code is <result>
 
     Examples:
