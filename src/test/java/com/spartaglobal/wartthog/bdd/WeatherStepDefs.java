@@ -22,8 +22,6 @@ public class WeatherStepDefs {
         throw new io.cucumber.java.PendingException();
     }
 
-
-
     @When("I set Header param request {string} as {string}")
     public void iSetHeaderParamRequestAs(String arg0, String arg1) {
     }

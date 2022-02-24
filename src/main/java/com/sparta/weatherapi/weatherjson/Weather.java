@@ -41,6 +41,9 @@ public class Weather{
 	@JsonProperty("base")
 	private String base;
 
+	@JsonProperty("message")
+	private String message;
+
 	@JsonProperty("wind")
 	private Wind wind;
 
