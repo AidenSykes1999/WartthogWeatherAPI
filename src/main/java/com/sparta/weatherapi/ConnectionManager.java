@@ -63,6 +63,21 @@ public class ConnectionManager {
         return cityApiCall(city, "", "");
     }
 
+    public String cityIDApiCall(String cityID) {
+
+        StringBuilder sb = new StringBuilder();
+
+        String cityIDCleaned = replaceSpaces(cityID);
+
+        sb.append(BASE_URL);
+        sb.append("id=").append(cityIDCleaned);
+        sb.append(getApiKeyString());
+
+        String responseString = makeApiCall(sb.toString());
+
+        return responseString;
+    }
+
     // for country codes use 'https://www.iso.org/obp/ui/#home'
     public String zipCodeApiCall(String zipCode, String countryCode) {
 

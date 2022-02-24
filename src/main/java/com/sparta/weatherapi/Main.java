@@ -47,6 +47,10 @@ public class Main {
         Weather weatherZipCountryCode = injector.injectResponseToWeather(stringWeatherZipCountryCode);
         System.out.println(weatherZipCountryCode.toString());
 
+        String stringWeatherCityID = connectionManager.cityIDApiCall("4986172");
+        Weather weatherCityID = injector.injectResponseToWeather(stringWeatherCityID);
+        System.out.println(weatherCityID.toString());
+
 
     }
 
