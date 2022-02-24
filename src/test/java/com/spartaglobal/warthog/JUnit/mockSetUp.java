@@ -12,6 +12,7 @@ public class mockSetUp {
 
     public static String buildString(String file)
     {
+        //takes in the JSON file and turns it into one long string the injector to use
         StringBuilder contentBuilder = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file)))
         {
@@ -32,11 +33,13 @@ public class mockSetUp {
 
     public static Weather createWeather(String file)
     {
-        Weather wether = new Weather();
+        //creates a custom Weather object, taking in a .txt file of a JSON class
+        Weather weather = new Weather();
         Injector inj = new Injector();
         String input = buildString(file);
-        wether = inj.injectResponseToWeather(input);
+        //turns the string into a weather object using the injector class
+        weather = inj.injectResponseToWeather(input);
 
-        return wether;
+        return weather;
     }
 }
