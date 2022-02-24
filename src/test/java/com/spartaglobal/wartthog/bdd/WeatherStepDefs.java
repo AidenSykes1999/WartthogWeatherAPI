@@ -2,7 +2,7 @@ package com.spartaglobal.wartthog.bdd;
 
 import com.sparta.weatherapi.ConnectionManager;
 import com.sparta.weatherapi.Injector;
-import com.sparta.weatherapi.weatherjson.Weather;
+import com.sparta.weatherapi.dtoweather.Weather;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import org.junit.Assert;

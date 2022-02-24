@@ -1,24 +1,24 @@
-package com.sparta.weatherapi.weatherjson;
+package com.sparta.weatherapi.dtoweather;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Wind{
 
-	@JsonProperty("deg")
-	private int deg;
-
 	@JsonProperty("speed")
 	private double speed;
+
+	@JsonProperty("deg")
+	private int degree;
 
 	@JsonProperty("gust")
 	private double gust;
 
-	public int getDeg(){
-		return deg;
-	}
-
 	public double getSpeed(){
 		return speed;
+	}
+
+	public int getDegree(){
+		return degree;
 	}
 
 	public double getGust(){
@@ -27,10 +27,10 @@ public class Wind{
 
 	@Override
 	public String toString() {
-		return "Wind{" +
-				"deg=" + deg +
-				", speed=" + speed +
-				", gust=" + gust +
+		return "Wind: {" +
+				"speed: " + speed +
+				", degree: " + degree  + "°" +
+				", gust: " + gust +
 				'}';
 	}
 }

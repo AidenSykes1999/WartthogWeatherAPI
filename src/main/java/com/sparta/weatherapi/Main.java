@@ -1,6 +1,6 @@
 package com.sparta.weatherapi;
 
-import com.sparta.weatherapi.weatherjson.Weather;
+import com.sparta.weatherapi.dtoweather.Weather;
 
 import java.io.FileReader;
 import java.io.IOException;
