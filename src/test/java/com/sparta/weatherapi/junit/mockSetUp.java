@@ -1,7 +1,7 @@
-package com.spartaglobal.warthog.JUnit;
+package com.sparta.weatherapi.junit;
 
 import com.sparta.weatherapi.Injector;
-import com.sparta.weatherapi.weatherjson.Weather;
+import com.sparta.weatherapi.dtoweather.Weather;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -34,7 +34,7 @@ public class mockSetUp {
     public static Weather createWeather(String file)
     {
         //creates a custom Weather object, taking in a .txt file of a JSON class
-        Weather weather = new Weather();
+        Weather weather;
         Injector inj = new Injector();
         String input = buildString(file);
         //turns the string into a weather object using the injector class
