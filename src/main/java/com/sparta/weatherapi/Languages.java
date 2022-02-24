@@ -3,6 +3,8 @@ package com.sparta.weatherapi;
 public enum Languages
 { //using ISO 639-2 Language codes
 
+    NONE(""),
+
     AFRIKAANS("af"),
     ALBANIAN("al"),
     ARABIC("ar"),
@@ -74,10 +76,10 @@ public enum Languages
 
     ZULU("zu");
 
-    public final String languageCode;
+    public final String apiValue;
 
-    Languages(String lCode)
+    Languages(String apiValue)
     {
-        this.languageCode = lCode;
+        this.apiValue = apiValue;
     }
 }
