@@ -18,16 +18,25 @@ public class Main {
             e.printStackTrace();
         }
 
-        ConnectionManager connectionManager = new ConnectionManager();
+        ConnectionManager connectionManager = new ConnectionManager(props);
         Injector injector = new Injector();
 
-        String stringWeather = connectionManager.latLonApiCall(props, 35, 139);
+        String stringWeather = connectionManager.latLonApiCall(35, 139);
         Weather testWeather = injector.injectResponseToWeather(stringWeather);
         System.out.println(testWeather.toString());
 
-        String stringWeatherCity = connectionManager.cityApiCall(props, "vihanti");
+        String stringWeatherCity = connectionManager.cityApiCall("New York");
         Weather testWeather2 = injector.injectResponseToWeather(stringWeatherCity);
         System.out.println(testWeather2.toString());
+
+
+        String stringWeatherStateCode = connectionManager.cityApiCall("California", "US-CA");
+        Weather stateCodeWeather = injector.injectResponseToWeather(stringWeatherStateCode);
+        System.out.println(stateCodeWeather.toString());
+
+        String stringWeatherCountryCode = connectionManager.cityApiCall("Beijing", "CN-BJ", "86");
+        Weather countryCodeWeather = injector.injectResponseToWeather(stringWeatherCountryCode);
+        System.out.println(countryCodeWeather.toString());
 
     }
 
