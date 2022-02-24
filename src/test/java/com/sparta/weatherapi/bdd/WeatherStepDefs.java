@@ -1,4 +1,4 @@
-package com.spartaglobal.wartthog.bdd;
+package com.sparta.weatherapi.bdd;
 
 import com.sparta.weatherapi.ConnectionManager;
 import com.sparta.weatherapi.Injector;
@@ -60,7 +60,6 @@ public class WeatherStepDefs {
     @And("I send {int} longitude and {int} latitude")
     public void i_send_lat_and_long(int latitude , int longitude ) {
     }
-
 
 
 }

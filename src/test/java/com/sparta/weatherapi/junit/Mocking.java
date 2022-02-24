@@ -1,4 +1,4 @@
-package com.spartaglobal.warthog.JUnit;
+package com.sparta.weatherapi.junit;
 
 import com.sparta.weatherapi.dtoweather.SystemInformation;
 import com.sparta.weatherapi.dtoweather.Weather;
@@ -11,20 +11,21 @@ import org.mockito.Mockito;
 
 public class Mocking {
 
-    public static Weather weth;
+    public static Weather weather;
 
     @BeforeAll
     public static void mockSetUp()
     {
         //creates a base class to mock using a given example before the tests are ran
-        weth = mockSetUp.createWeather("responseExample.txt");
+        weather = mockSetUp.createWeather("responseExample.txt");
     }
 
     @Test
     @DisplayName("Given that the provided example gives FR as the country. Check that this is correctly returned")
     public void testCorrectCountry()
     {
-        SystemInformation sys  = weth.getSystemInformation();
+        SystemInformation sys  = weather.getSystemInformation();
+
         SystemInformation sys2 = Mockito.spy(sys);
         Mockito.when(sys2.getCountry()).thenReturn("FR");
 
