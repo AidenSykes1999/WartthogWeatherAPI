@@ -37,5 +37,7 @@ public class WeatherStepDefs {
     }
 
 
-
+    @Then("status code is {string}")
+    public void statusCodeIsResult() {
+    }
 }
