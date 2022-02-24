@@ -3,35 +3,32 @@ package com.sparta.weatherapi;
 public enum Languages
 { //using ISO 639-2 Language codes
 
-    AFRIKAANS("afr"),
-    ALBANIAN("alb"),
-    ARABIC("ara"),
-    AZERBAIJANI("aze"),
+    AFRIKAANS("af"),
+    ALBANIAN("al"),
+    ARABIC("ar"),
+    AZERBAIJANI("az"),
 
-    BASQUE("baq"),
-    BENGALI("bn"),
-    BULGARIAN("bul"),
+    BULGARIAN("bg"),
 
-    CATALAN("cat"),
-    CHINESE("zh"),
-    CROATIAN("hr"),
-    CZECH("cze"),
+    CATALAN("ca"),
+    CZECH("cz"),
 
-    DANISH("dan"),
-    DUTCH("dut"),
+    DANISH("da"),
+    GERMAN("de"),
 
+    GREEK("el"),
     ENGLISH("en"),
+    BASQUE("eu"),
 
-    FARSI("fas"),
+    PERSIAN("fa"),
     FINNISH("fi"),
     FRENCH("fr"),
 
-    GALICIAN("glg"),
-    GERMAN("de"),
-    GREEK("el"),
+    GALICIAN("gl"),
 
     HEBREW("he"),
     HINDI("hi"),
+    CROATIAN("hr"),
     HUNGARIAN("hu"),
 
     INDONESIAN("id"),
@@ -41,33 +38,41 @@ public enum Languages
 
     KOREAN("ko"),
 
-    LATVIAN("lav"),
-    LITHUANIAN("lit"),
+    LATVIAN("la"),
+    LITHUANIAN("lt"),
 
-    MACEDONIAN("mkd"),
+    MACEDONIAN("mk"),
 
-    NORWEGIAN("nor"),
+    NORWEGIAN("no"),
+    DUTCH("nl"),
 
     POLISH("pl"),
-    PORTUGUESE("por"),
-    PUNJABI("pa"),
+    PORTUGUESE("pt"),
+    PORTUGUESE_BRASIL("pt_br"),
 
-    ROMANIAN("ron"),
-    RUSSIAN("rus"),
+    ROMANIAN("ro"),
+    RUSSIAN("ru"),
 
-    SERBIAN("srp"),
+    SWEDISH1("sv"),
+    SWEDISH2("se"),
     SLOVAK("sk"),
-    SLOVENIAN("slk"),
-    SPANISH("es"),
-    SWEDISH("sv"),
+    SLOVENIAN("sl"),
+    SPANISH1("sp"),
+    SPANISH2("es"),
+    SERBIAN("sr"),
 
-    TAMIL("ta"),
-    THAI("tha"),
-    TURKISH("tur"),
+    THAI("th"),
+    TURKISH("tr"),
 
-    UKRAINIAN("ukr"),
+    UKRAINIAN1("ua"),
+    UKRAINIAN2("uk"),
 
-    ZULU("zul");
+    VIETNAMESE("vi"),
+
+    CHINESE_SIMPLIFIED("zh_cn"),
+    CHINESE_TRADITIONAL("zh_tw"),
+
+    ZULU("zu");
 
     public final String languageCode;
 
