@@ -2,6 +2,7 @@ package com.sparta.weatherapi.junit;
 
 import com.sparta.weatherapi.dtoweather.SystemInformation;
 import com.sparta.weatherapi.dtoweather.Weather;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -24,6 +25,7 @@ public class Mocking {
     public void testCorrectCountry()
     {
         SystemInformation sys  = weather.getSystemInformation();
+
         SystemInformation sys2 = Mockito.spy(sys);
         Mockito.when(sys2.getCountry()).thenReturn("FR");
 

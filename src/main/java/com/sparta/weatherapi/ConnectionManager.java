@@ -9,27 +9,109 @@ import java.util.Properties;
 
 public class ConnectionManager {
 
+    private static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?";
+    private Properties props;
+
     private int statusCode;
 
-    public String latLonApiCall(Properties props, int latitude, int longitude) {
+    public ConnectionManager(Properties props) {
+        this.props = props;
+    }
 
-        String url = "http://api.openweathermap.org/data/2.5/weather?"
-                + "lat=" + latitude + "&lon=" + longitude
-                + "&appid=" + props.getProperty("apikey");
+    public String latLonApiCall(int latitude, int longitude) {
+
+        String url = BASE_URL + "lat=" + latitude + "&lon=" + longitude
+                + "&appid=" + getApiKeyString();
 
         String responseString = makeApiCall(url);
 
         return responseString;
     }
 
-    public String cityApiCall(Properties props, String city) {
+    // for state and country codes use 'https://www.iso.org/obp/ui/#home'
+    public String cityApiCall(String city, String stateCode, String countryCode) {
 
-        String url = "http://api.openweathermap.org/data/2.5/weather?"
-                + "q=" + city + "&appid=" + props.getProperty("apikey");
+        StringBuilder sb = new StringBuilder();
 
-        String responseString = makeApiCall(url);
+        String cityCleaned = replaceSpaces(city);
+        String stateCodeCleaned = replaceSpaces(stateCode);
+        String countryCodeCleaned = replaceSpaces(countryCode);
+
+        sb.append(BASE_URL);
+        sb.append("q=").append(cityCleaned);
+
+        if (!stateCode.equals("")) {
+            sb.append(",").append(stateCodeCleaned);
+        }
+
+        if (!countryCode.equals("")) {
+            sb.append(",").append(countryCodeCleaned);
+        }
+
+        sb.append(getApiKeyString());
+
+        String responseString = makeApiCall(sb.toString());
 
         return responseString;
+    }
+
+    public String cityApiCall(String city, String stateCode) {
+        return cityApiCall(city, stateCode, "");
+    }
+
+    public String cityApiCall(String city) {
+        return cityApiCall(city, "", "");
+    }
+
+    public String cityIDApiCall(String cityID) {
+
+        StringBuilder sb = new StringBuilder();
+
+        String cityIDCleaned = replaceSpaces(cityID);
+
+        sb.append(BASE_URL);
+        sb.append("id=").append(cityIDCleaned);
+        sb.append(getApiKeyString());
+
+        String responseString = makeApiCall(sb.toString());
+
+        return responseString;
+    }
+
+    // for country codes use 'https://www.iso.org/obp/ui/#home'
+    public String zipCodeApiCall(String zipCode, String countryCode) {
+
+        StringBuilder sb = new StringBuilder();
+
+        String zipCodeCleaned = replaceSpaces(zipCode);
+        String countryCodeCleaned = replaceSpaces(zipCode);
+
+        sb.append(BASE_URL);
+        sb.append("zip=").append(zipCodeCleaned);
+
+        if (countryCodeCleaned != "") {
+            sb.append(",").append(countryCode);
+        }
+
+        sb.append(getApiKeyString());
+
+        String responseString = makeApiCall(sb.toString());
+
+        return responseString;
+
+    }
+
+    public String zipCodeApiCall(String zipCode) {
+        return zipCodeApiCall(zipCode, "");
+    }
+
+
+    private String replaceSpaces(String spaceInput) {
+        return spaceInput.replace(" ", "%20");
+    }
+
+    public String getApiKeyString() {
+        return "&appid=" + props.getProperty("apikey");
     }
 
     private String makeApiCall(String url) {
@@ -44,7 +126,7 @@ public class ConnectionManager {
 
         try{
             HttpResponse<String> response =
-                    httpClient.send(request,HttpResponse.BodyHandlers.ofString());
+                    httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
             responseString = response.body();
             this.statusCode = response.statusCode();

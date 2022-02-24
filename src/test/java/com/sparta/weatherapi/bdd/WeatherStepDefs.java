@@ -28,7 +28,7 @@ public class WeatherStepDefs {
             e.printStackTrace();
         }
 
-        connectionManager = new ConnectionManager();
+        connectionManager = new ConnectionManager(props);
         injector = new Injector();
     }
 
@@ -54,7 +54,7 @@ public class WeatherStepDefs {
 
     @When("I set query param {string} as {string}")
     public void iSetQueryParamAs(String arg0, String arg1) {
-        connectionCity = connectionManager.cityApiCall(props, arg1);
+        connectionCity = connectionManager.cityApiCall(arg1);
     }
 
     @And("I send {int} longitude and {int} latitude")
