@@ -39,6 +39,15 @@ public class Main {
         Weather countryCodeWeather = injector.injectResponseToWeather(stringWeatherCountryCode);
         System.out.println(countryCodeWeather.toString());
 
+        String stringWeatherZipCode = connectionManager.zipCodeApiCall("32720");
+        Weather weatherZipCode = injector.injectResponseToWeather(stringWeatherZipCode);
+        System.out.println(weatherZipCode.toString());
+
+        String stringWeatherZipCountryCode = connectionManager.zipCodeApiCall("WV15 6HJ", "GB");
+        Weather weatherZipCountryCode = injector.injectResponseToWeather(stringWeatherZipCountryCode);
+        System.out.println(weatherZipCountryCode.toString());
+
+
     }
 
 

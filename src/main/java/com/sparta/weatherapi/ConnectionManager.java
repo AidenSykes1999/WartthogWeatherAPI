@@ -28,21 +28,24 @@ public class ConnectionManager {
         return responseString;
     }
 
+    // for state and country codes use 'https://www.iso.org/obp/ui/#home'
     public String cityApiCall(String city, String stateCode, String countryCode) {
 
         StringBuilder sb = new StringBuilder();
 
         String cityCleaned = replaceSpaces(city);
+        String stateCodeCleaned = replaceSpaces(stateCode);
+        String countryCodeCleaned = replaceSpaces(countryCode);
 
         sb.append(BASE_URL);
         sb.append("q=").append(cityCleaned);
 
         if (!stateCode.equals("")) {
-            sb.append(",").append(stateCode);
+            sb.append(",").append(stateCodeCleaned);
         }
 
         if (!countryCode.equals("")) {
-            sb.append(",").append(countryCode);
+            sb.append(",").append(countryCodeCleaned);
         }
 
         sb.append(getApiKeyString());
@@ -59,6 +62,34 @@ public class ConnectionManager {
     public String cityApiCall(String city) {
         return cityApiCall(city, "", "");
     }
+
+    // for country codes use 'https://www.iso.org/obp/ui/#home'
+    public String zipCodeApiCall(String zipCode, String countryCode) {
+
+        StringBuilder sb = new StringBuilder();
+
+        String zipCodeCleaned = replaceSpaces(zipCode);
+        String countryCodeCleaned = replaceSpaces(zipCode);
+
+        sb.append(BASE_URL);
+        sb.append("zip=").append(zipCodeCleaned);
+
+        if (countryCodeCleaned != "") {
+            sb.append(",").append(countryCode);
+        }
+
+        sb.append(getApiKeyString());
+
+        String responseString = makeApiCall(sb.toString());
+
+        return responseString;
+
+    }
+
+    public String zipCodeApiCall(String zipCode) {
+        return zipCodeApiCall(zipCode, "");
+    }
+
 
     private String replaceSpaces(String spaceInput) {
         return spaceInput.replace(" ", "%20");
