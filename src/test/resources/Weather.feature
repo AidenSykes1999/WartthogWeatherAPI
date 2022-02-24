@@ -69,3 +69,20 @@ Feature: Weather
       | Kiev   | 200    |
       | Москва | 200    |
       | 鹿児島市   | 200    |
+
+
+    # If user enters a city name with a space, then the API should handle the city name without throwing an error
+
+
+  Scenario Outline: City with Multiple Words
+    Given the user with ID "ID" for the API
+    When I send "GET" HTTP request
+    When I set Header param request "Content-Type" as "application/json"
+    When I set query param "q" as <city>
+    Then status code is <result>
+
+    Examples:
+      | city             | result |
+      | St. Petersburg   | 200    |
+      | New York         | 200    |
+      | Stoke Upon Trent | 200    |
