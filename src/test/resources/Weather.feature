@@ -28,3 +28,21 @@ Feature: Weather
       | 0      | 1      | 200    |
       | 1000   | 1      | 406    |
 
+      #If user is entering lang that is not supported by the API
+
+
+  Scenario:
+
+    Given the user with ID "ID" for the API
+    When I send "GET" HTTP request
+    When I set Header param request "Content-Type" as "application/json"
+    When I set query param "lang" as "en"
+    Then status code is "200"
+
+  Scenario:
+
+    Given the user with ID "ID" for the API
+    When I send "GET" HTTP request
+    When I set Header param request "Content-Type" as "application/json"
+    When I set query param "lang" as "spain"
+    Then status code is "400"
