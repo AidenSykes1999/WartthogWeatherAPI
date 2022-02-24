@@ -26,7 +26,7 @@ Feature: Weather
       | input1 | input2 | result |
       | 1      | 1      | 200    |
       | 0      | 1      | 200    |
-      | 1000   | 1      | 406    |
+      | 1000   | 1      | 400    |
 
       #If user is entering lang that is not supported by the API
 
@@ -46,3 +46,26 @@ Feature: Weather
     When I set Header param request "Content-Type" as "application/json"
     When I set query param "lang" as "spain"
     Then status code is 400
+
+
+    #If user enters wrong format for parameters i.e int  instead of String
+
+  #  When I set query param "q" as "50"
+  # Then status code is 400
+
+
+  # If user enters a city name in a foreign language, then the API should translate the city name to its' native language
+
+  Scenario Outline: Foreign City
+    Given the user with ID "ID" for the API
+    When I send "GET" HTTP request
+    When I set Header param request "Content-Type" as "application/json"
+    When I set query param "q" as <city>
+    Then status code is <result>
+
+    Examples:
+      | city   | result |
+      | Roma   | 200    |
+      | Kiev   | 200    |
+      | Москва | 200    |
+      | 鹿児島市   | 200    |
