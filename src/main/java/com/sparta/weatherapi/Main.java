@@ -25,6 +25,10 @@ public class Main {
         Weather testWeather = injector.injectResponseToWeather(stringWeather);
         System.out.println(testWeather.toString());
 
+        String stringWeatherCity = connectionManager.cityApiCall(props, "Zargosa");
+        Weather testWeather2 = injector.injectResponseToWeather(stringWeatherCity);
+        System.out.println(testWeather2.toString());
+
     }
 
 
