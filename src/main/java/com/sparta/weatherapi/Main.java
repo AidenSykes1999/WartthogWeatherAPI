@@ -1,6 +1,6 @@
 package com.sparta.weatherapi;
 
-import com.sparta.weatherapi.weatherjson.Weather;
+import com.sparta.weatherapi.dtoweather.Weather;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,21 +18,39 @@ public class Main {
             e.printStackTrace();
         }
 
-        ConnectionManager connectionManager = new ConnectionManager();
+        ConnectionManager connectionManager = new ConnectionManager(props);
         Injector injector = new Injector();
 
-        String stringWeather = connectionManager.getResponseByLatLon(35,139,props);
+
+        String stringWeather = connectionManager.latLonApiCall(35, 139);
         Weather testWeather = injector.injectResponseToWeather(stringWeather);
         System.out.println(testWeather.toString());
 
-        String stringWeatherCity = connectionManager.getResponseByCity("Zaragoza",props);
+
+        String stringWeatherCity = connectionManager.cityApiCall("New York");
         Weather testWeather2 = injector.injectResponseToWeather(stringWeatherCity);
         System.out.println(testWeather2.toString());
 
-        String stringWeatherZipCountry = connectionManager.getResponseByZipCountryCode("28018","es",props);
-        Weather testWeather3 = injector.injectResponseToWeather(stringWeatherZipCountry);
-        System.out.println(testWeather3);
 
+        String stringWeatherStateCode = connectionManager.cityApiCall("California", "US-CA");
+        Weather stateCodeWeather = injector.injectResponseToWeather(stringWeatherStateCode);
+        System.out.println(stateCodeWeather.toString());
+
+        String stringWeatherCountryCode = connectionManager.cityApiCall("Beijing", "CN-BJ", "86");
+        Weather countryCodeWeather = injector.injectResponseToWeather(stringWeatherCountryCode);
+        System.out.println(countryCodeWeather.toString());
+
+        String stringWeatherZipCode = connectionManager.zipCodeApiCall("32720");
+        Weather weatherZipCode = injector.injectResponseToWeather(stringWeatherZipCode);
+        System.out.println(weatherZipCode.toString());
+
+        String stringWeatherZipCountryCode = connectionManager.zipCodeApiCall("WV15 6HJ", "GB");
+        Weather weatherZipCountryCode = injector.injectResponseToWeather(stringWeatherZipCountryCode);
+        System.out.println(weatherZipCountryCode.toString());
+
+        String stringWeatherCityID = connectionManager.cityIDApiCall("4986172");
+        Weather weatherCityID = injector.injectResponseToWeather(stringWeatherCityID);
+        System.out.println(weatherCityID.toString());
 
 
     }

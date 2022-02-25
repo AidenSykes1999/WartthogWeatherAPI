@@ -1,11 +1,9 @@
 package com.sparta.weatherapi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sparta.weatherapi.weatherjson.Weather;
-import com.sparta.weatherapi.weatherjson.WeatherItem;
+import com.sparta.weatherapi.dtoweather.Weather;
 
 import java.io.IOException;
-import java.util.List;
 
 public class Injector {
 
