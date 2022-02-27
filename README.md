@@ -246,11 +246,21 @@ The only thing that needs to be done is calling the Connection Manager class and
 <br/>
 
 ### **Testing**
-#### **JUnit Testing**
-- To provide a better performance to the user, all parts of this framework have been thoroughly tested using JUnit (unit testing framework).
 
-ADD DETAILS AND SCREENSHOTS
-
+#### **Junit Testing**
+Within the JUNIT testing file, you can see the Connection Manager Test
+This testing covers all parts of the classes created to make sure they are working correctly
+#### **Mocking**
+Within the JUNIT folder you will see a Mocking file and a mockSetUp File. 
+Within the mocking file you can see examples of the mocking that you can use. 
+To make things easier we have the mockSetUp class. This takes in one example of 
+the responses that the API gives that then changes it into a weather
+object and then can use the program in the same way that you would if you connect to the program without
+having to connect to it.
+You can see the below code for how the string is built. It takes in an example file, and changes
+it all into one long string, that a weather object can then be created.
+- ![img.png](img.png)
+- ![img_1.png](img_1.png)
 #### **Manual Testing**
 
 As a tool, Postman was used to test the Open Weather API manually. It gives us more opportunity to understand how this API works and responds back after going through the documentation itself.
@@ -263,9 +273,7 @@ As a tool, Postman was used to test the Open Weather API manually. It gives us m
 </div>
 <br/>
 
-#### **Mocking**
 
-ADD DETAILS AND SCREENSHOTS
 
 <br/>
 <div align="left">
