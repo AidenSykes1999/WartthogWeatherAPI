@@ -130,7 +130,6 @@ public class ConnectionManagerTest {
 
         Assertions.assertEquals(200, connectionManager.getStatusCode());
     }
-
     @Test
     @DisplayName("City only is provided give the correct response ")
     public void cityApiCallCityOnly() {
@@ -142,7 +141,6 @@ public class ConnectionManagerTest {
 
         Assertions.assertEquals(200, connectionManager.getStatusCode());
     }
-
     @Test
     @DisplayName("City only is provided with a language give the correct response ")
     public void cityApiCallCityOnlyLanguage() {
@@ -154,7 +152,6 @@ public class ConnectionManagerTest {
 
         Assertions.assertEquals(200, connectionManager.getStatusCode());
     }
-
     @Test
     @DisplayName("City only is provided with a Unit give the correct response")
     public void cityApiCallCityOnlyUnits() {
@@ -166,13 +163,56 @@ public class ConnectionManagerTest {
 
         Assertions.assertEquals(200, connectionManager.getStatusCode());
     }
-
     @Test
     @DisplayName("City only is provided with a Unit and Language give the correct response")
     public void cityApiCallCityOnlyUnitsandLanguage() {
         setUp();
 
         String weatherString = connectionManager.cityApiCall("New York", Units.STANDARD, Languages.FRENCH);
+        Weather weather = injector.injectResponseToWeather(weatherString);
+        System.out.println(weather);
+
+        Assertions.assertEquals(200, connectionManager.getStatusCode());
+    }
+    @Test
+    @DisplayName("Check City APi Call given all the parameters")
+    public void cityIDAPICall() {
+        setUp();
+
+        String weatherString = connectionManager.cityIDApiCall("7922173", Units.STANDARD, Languages.FRENCH);
+        Weather weather = injector.injectResponseToWeather(weatherString);
+        System.out.println(weather);
+
+        Assertions.assertEquals(200, connectionManager.getStatusCode());
+    }
+    @Test
+    @DisplayName("Check City APi Call given without Units")
+    public void cityIDAPICallnoUnits() {
+        setUp();
+
+        String weatherString = connectionManager.cityIDApiCall("7922173", Languages.FRENCH);
+        Weather weather = injector.injectResponseToWeather(weatherString);
+        System.out.println(weather);
+
+        Assertions.assertEquals(200, connectionManager.getStatusCode());
+    }
+    @Test
+    @DisplayName("Check City APi Call given without Language")
+    public void cityIDAPICallnoLanguage() {
+        setUp();
+
+        String weatherString = connectionManager.cityIDApiCall("7922173", Units.IMPERIAL);
+        Weather weather = injector.injectResponseToWeather(weatherString);
+        System.out.println(weather);
+
+        Assertions.assertEquals(200, connectionManager.getStatusCode());
+    }
+    @Test
+    @DisplayName("Check City APi Call given only ID")
+    public void cityIDAPICallOnly() {
+        setUp();
+
+        String weatherString = connectionManager.cityIDApiCall("7922173");
         Weather weather = injector.injectResponseToWeather(weatherString);
         System.out.println(weather);
 
