@@ -47,7 +47,7 @@
     - [Hamcrest](#hamcrest)
 * [**How to use the project**](#how-to-use-the-project)
     - [How to download](#how-to-download)
-    - [Instructions for using the project on the console](#instructions-for-running-the-application-on-the-console)
+    - [Instructions for using the project on the console](#instructions-for-using-the-project-on-the-console)
 * [**Testing**](#testing)
     - [JUnit Testing](#junit-testing)
     - [Manual Testing](#manual-testing)
@@ -150,18 +150,22 @@ Hamcrest is a framework that assists writing software tests in the Java programm
 
 #### **How to download**
 - Step 1: Click on the green 'Code' button and then choose the 'Download ZIP' option.
-  <img src="ProgramImages/"/>
+  <img src="ProgramImages/s1.png"/>
 - Step 2: Extract the file by double-clicking on the downloaded ZIP file.
-  <img src="ProgramImages/"/>
+  <img src="ProgramImages/s2.png"/>
 - Step 3: Open IntelliJ IDEA application, then click on File option (the option is in the top left corner of the screen) and then click on Open. Then navigate to the place where you have extracted the folder, select the folder and click 'Open'.
-  <img src="ProgramImages/"/>
-  <img src="ProgramImages/"/>
+  <img src="ProgramImages/S3.jpg"/>
+  <img src="ProgramImages/s3b.png"/>
 - Step 4: Click on 'Trust Project' button, and then Click on 'New Window'.
-  <img src="ProgramImages/"/>
-  <img src="ProgramImages/"/>
+  <img src="ProgramImages/s4.png"/>
+  <img src="ProgramImages/s4b.png"/>
 - Step 5: Look for Main.java class after following these steps: WartthogWeatherAPI > src > main > java > com.sparta.weatherapi > Main.java
-  <img src="ProgramImages/"/>
+  <img src="ProgramImages/s5.png"/>
 - Step 6: Run the Main class and enjoy the project.
+
+#### **Instructions for using the project on the console**
+ADD DETAILS AND SCREENSHOTS
+
   <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
