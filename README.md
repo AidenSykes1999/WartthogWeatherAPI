@@ -259,19 +259,21 @@ object and then can use the program in the same way that you would if you connec
 having to connect to it.
 You can see the below code for how the string is built. It takes in an example file, and changes
 it all into one long string, that a weather object can then be created.
-- ![img.png](img.png)
-- ![img_1.png](img_1.png)
-#### **Manual Testing**
-
-As a tool, Postman was used to test the Open Weather API manually. It gives us more opportunity to understand how this API works and responds back after going through the documentation itself.
-
-![image-Postman](https://i.imgur.com/ve2AzGJ.png)
+<img src="ProgramImages/img210.jpg"/>
+<img src="ProgramImages/img1.png"/>
 
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
+#### **Manual Testing**
+
+As a tool, Postman was used to test the Open Weather API manually. It gives us more opportunity to understand how this API works and responds back after going through the documentation itself.
+
+![image-Postman](https://i.imgur.com/ve2AzGJ.png)
+
+
 
 
 
