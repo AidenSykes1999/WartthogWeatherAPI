@@ -78,18 +78,88 @@ A framework, or software framework, is a platform that provides a foundation for
 
 ### **Project Planning**
 
+In this project, Agile methodology was implemented. As a framework of Agile, we worked under Scrum framework. Trello was used for the management of the project. Daily stand-up, Spring planning, Retrospective meetings were hold. There were 3 sprints throughout the project. We had 3 user stories in this project.
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
 #### **Sprint 1**
-ADD DETAILS AND SCREENSHOTS
+
+Development and testing started at the same time. Connection manager, injector and data transfer object classes were added to the project.
+
+![image-sprint1](https://i.imgur.com/ugdYzbq.png)
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
 #### **Sprint 2**
-ADD DETAILS AND SCREENSHOTS
+
+Development and testing sides were updated. Languages and Units classes as enum were added to the framework. More BDD testing was done and JUnit tests were developed more with Mockito dependency.
+
+![image-sprint2](https://i.imgur.com/PpEaipO.png)
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
 #### **Sprint 3**
-ADD DETAILS AND SCREENSHOTS
+
+At third sprint, the part of the project that mainly focused was presentation. Group members prepared and practice their parts and the presentation itself took about 15 minutes with the questions asked at the end of the presentation.
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
 #### **Mood Board**
 
-ADD DETAILS AND SCREENSHOTS
-#### **User Stories**
-ADD DETAILS AND SCREENSHOTS
+Moods of group members were put into the mood board at retrospective meetings in each sprint. This graph is as below: 
 
+![image-moodBoard](https://i.imgur.com/vXaPij1.png)
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+#### **User Stories**
+
+There were 3 user stories, and they were listed as below: 
+
+_User Story 1_
+
+As a user, I want to the response to be formatted into an object and return different parts of the object.
+
+_Acceptance Criteria:_
+- The Json object is converted into a weather object.
+- Each variable has a getter to retrieve the information.
+
+_User Story 2_
+
+As a user, I want a class that takes all the information from the response and creates a DTO.
+
+_Acceptance Criteria:_
+- Injector takes in an Json Object.
+- Injector splits out the parts and constructs a new class.
+
+_User Story 3_
+
+As a user, I want to be able to connect to API in dynamic way so that I can easily connect to other URLs.
+
+_Acceptance Criteria:_
+- Hide all codes to do with HTTP.
+- Read the URL from a properties file.
+- Generate a method with different parameters to pass.
 
 <br/>
 <div align="left">
@@ -165,8 +235,10 @@ Hamcrest is a framework that assists writing software tests in the Java programm
 - Step 6: Run the Main class and enjoy the project.
 
 #### **Instructions for using the project on the console**
-ADD DETAILS AND SCREENSHOTS
 
+The only thing that needs to be done is calling the Connection Manager class and use its methods to be able to send HTTP request. This will be converted to DTO classes by using Injector. We can test our values afterwards. In gherkin, you can use the methods that were created already before. 
+
+![image-howtouseprogram](https://i.imgur.com/ZXroY9s.png)
   <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
@@ -181,12 +253,31 @@ ADD DETAILS AND SCREENSHOTS
 
 #### **Manual Testing**
 
-ADD DETAILS AND SCREENSHOTS
+As a tool, Postman was used to test the Open Weather API manually. It gives us more opportunity to understand how this API works and responds back after going through the documentation itself.
+
+![image-Postman](https://i.imgur.com/ve2AzGJ.png)
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
 
 #### **Mocking**
 
-
 ADD DETAILS AND SCREENSHOTS
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
+#### **Behavior-driven Development Tests**
+
+Gherkin language with Given, When, Then clauses were used to make tests more understandable for the people who are not technical. We aimed to use common methods as much as possible to be able to create more tests without paying more efforts. These tests created by Gherkin language were implemented into the methods using Cucumber dependency.
+
+![image-testResultsOfGherkin](https://i.imgur.com/b7QplaQ.png)
 
 <br/>
 <div align="left">
