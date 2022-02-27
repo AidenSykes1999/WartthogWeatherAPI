@@ -32,7 +32,7 @@
 ## **Table Of Contents**
 * [**Overview**](#overview)
 * [**What is framework?**](#what-is-framework)
-* [**Project Planning (Agile)**](#project-planning)
+* [**Project Planning (Agile - Scrum)**](#project-planning)
     - [Sprint 1](#sprint-1)
     - [Sprint 2](#sprint-2)
     - [Sprint 3](#sprint-3)
@@ -52,6 +52,7 @@
     - [JUnit Testing](#junit-testing)
     - [Manual Testing](#manual-testing)
     - [Mocking](#mocking)
+    - [Behavior-driven Development Tests](#behavior-driven-development-tests)
 * [**Future work**](#future-work)
 
 ### **Overview**

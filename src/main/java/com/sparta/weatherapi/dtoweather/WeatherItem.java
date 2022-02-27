@@ -1,4 +1,4 @@
-package com.sparta.weatherapi.weatherjson;
+package com.sparta.weatherapi.dtoweather;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -34,7 +34,7 @@ public class WeatherItem{
 
 	@Override
 	public String toString() {
-		return "WeatherItem{" +
+		return "WeatherItem: {" +
 				"icon='" + icon + '\'' +
 				", description='" + description + '\'' +
 				", main='" + main + '\'' +
