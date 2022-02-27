@@ -250,6 +250,13 @@ The only thing that needs to be done is calling the Connection Manager class and
 #### **Junit Testing**
 Within the JUNIT testing file, you can see the Connection Manager Test
 This testing covers all parts of the classes created to make sure they are working correctly
+
+<br/>
+<div align="left">
+    <b><a href="#table-of-contents">↥ Back to top</a></b>
+</div>
+<br/>
+
 #### **Mocking**
 Within the JUNIT folder you will see a Mocking file and a mockSetUp File. 
 Within the mocking file you can see examples of the mocking that you can use. 
@@ -259,23 +266,22 @@ object and then can use the program in the same way that you would if you connec
 having to connect to it.
 You can see the below code for how the string is built. It takes in an example file, and changes
 it all into one long string, that a weather object can then be created.
-<img src="ProgramImages/img210.jpg"/>
-<img src="ProgramImages/img1.png"/>
+
+![image-buildString](https://i.imgur.com/nWlakSt.png)
+
+![image-createWeather](https://i.imgur.com/lxlaoIq.png)
 
 <br/>
 <div align="left">
     <b><a href="#table-of-contents">↥ Back to top</a></b>
 </div>
 <br/>
+
 #### **Manual Testing**
 
 As a tool, Postman was used to test the Open Weather API manually. It gives us more opportunity to understand how this API works and responds back after going through the documentation itself.
 
 ![image-Postman](https://i.imgur.com/ve2AzGJ.png)
-
-
-
-
 
 <br/>
 <div align="left">
